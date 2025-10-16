@@ -1,0 +1,12 @@
+namespaces:
+  - name: 'com.signatur3.midjourney.eval'
+    datatypes:
+    promptsections:
+      - name: v8-eval-params
+        template: '--ar {}'
+        datatypereferences:
+          - type: 'com.signatur3.common::aspect-ratio'
+      - name: eval-void
+        template: '. []'
+        promptsectionreferences:
+          - type: 'v8-eval-params'

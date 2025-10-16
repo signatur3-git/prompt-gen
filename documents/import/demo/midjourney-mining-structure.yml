@@ -1,0 +1,112 @@
+namespaces:
+  - name: 'com.signatur3.midjourney.mining'
+    datatypes:
+      - name: unvetted-v7-profile
+      - name: unvetted-v7-moodboard
+    promptsections:
+      - name: sref-01-digit
+        template: '{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+      - name: sref-02-digits
+        template: '{}{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+          - type: com.signatur3.common:random-number-subsequent
+            min: 1
+      - name: sref-03-digits
+        template: '{}{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+          - type: com.signatur3.common:random-number-subsequent
+            min: 2
+      - name: sref-04-digits
+        template: '{}{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+          - type: com.signatur3.common:random-number-subsequent
+            min: 3
+      - name: sref-05-digits
+        template: '{}{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+          - type: com.signatur3.common:random-number-subsequent
+            min: 4
+      - name: sref-06-digits
+        template: '{}{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+          - type: com.signatur3.common:random-number-subsequent
+            min: 5
+      - name: sref-07-digits
+        template: '{}{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+          - type: com.signatur3.common:random-number-subsequent
+            min: 6
+      - name: sref-08-digits
+        template: '{}{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+          - type: com.signatur3.common:random-number-subsequent
+            min: 7
+      - name: sref-09-digits
+        template: '{}{}'
+        datatypereferences:
+          - type: com.signatur3.common:random-number-first
+          - type: com.signatur3.common:random-number-subsequent
+            min: 8
+      - name: mining-v7-params
+        template: '[]{}{}--ar {}'
+        datatypereferences:
+          - typechoice:
+              - type: unvetted-v7-profile
+                weight: compute
+              - type: unvetted-v7-moodboard
+                weight: compute
+            min: 0
+            max: 1
+            if:
+              prepend: '--p '
+              append: ' '
+          - type: com.signatur3.common::stylize
+            min: 0
+            max: 1
+            if:
+              prepend: '--s '
+              append: ' '
+        promptsectionreferences:
+          - typechoice:
+              - type: sref-01-digit
+                weight: 9
+              - type: sref-02-digits
+                weight: 90
+              - type: sref-03-digits
+                weight: 900
+              - type: sref-04-digits
+                weight: 9000
+              - type: sref-05-digits
+                weight: 90000
+              - type: sref-06-digits
+                weight: 900000
+              - type: sref-07-digits
+                weight: 9000000
+              - type: sref-08-digits
+                weight: 90000000
+              - type: sref-09-digits
+                weight: 900000000
+            min: 0
+            max: 3
+            separatorset: 'com.signatur3.common::space'
+            if:
+              prepend: '--sref '
+              append: ' '
+      - name: mining-void
+        template: '. []'
+        promptsectionreferences:
+          - type: mining-params
+      - name: mining-three-random-words
+        template: '[] []'
+        promptsectionreferences:
+          - type: 'com.signatur3.common::three-random-words'
+          - type: mining-params

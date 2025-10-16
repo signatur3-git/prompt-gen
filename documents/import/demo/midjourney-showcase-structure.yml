@@ -1,0 +1,44 @@
+namespaces:
+  - name: 'com.signatur3.midjourney.showcase'
+    datatypes:
+      - name: showcase-profile
+      - name: showcase-moodboard
+      - name: showcase-sref
+    promptsections:
+      - name: showcase-params
+        template: '{}{}{}--ar {}'
+        datatypereferences:
+          - type: showcase-sref
+            min: 0
+            max: 3
+            separatorset: 'com.signatur3.common::space'
+            if:
+              prepend: '--sref '
+              append: ' '
+          - typechoice:
+              - showcase-profile
+              - showcase-moodboard
+            min: 0
+            max: 3
+            separatorset: 'com.signatur3.common::space'
+            if:
+              prepend: '--p '
+              append: ' '
+      - name: showcase-void
+        template: '. []'
+        promptsectionreferences:
+          - name: params
+      - name: showcase-three-random-words
+        template: '[] []'
+        promptsectionreferences:
+          - type: 'com.signatur3.common::three-random-words'
+          - type: mining-params
+    rulebooks:
+      - name: 'v6_1'
+        entry-sections:
+          - name: showcase-void
+          - name: showcase-three-random-words
+      - name: 'v7'
+        entry-sections:
+          - name: showcase-void
+          - name: showcase-three-random-words

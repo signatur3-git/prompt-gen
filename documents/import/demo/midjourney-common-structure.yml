@@ -1,0 +1,6 @@
+namespaces:
+  - name: com.signatur3.midjourney.common
+    datatypes:
+      - name: stylize
+      - name: weird
+      - name: exp

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Hello</title>
+</head>
+<body>
+<h1 th:text="'Hello, ' + ${name} + '!'">Hello, World!</h1>
+
+<div>
+    <h1>Namespaces</h1>
+    <div th:each="namespace : ${namespaces}">
+        <div th:text="${namespace.name}"></div>
+    </div>
+
+    <h1>Rulebooks</h1>
+    <div th:each="rulebook : ${rulebooks}">
+        <div th:text="|${rulebook.namespace} - ${rulebook.name} - ${rulebook.entrySections}|"></div>
+    </div>
+
+    <h1>DataTypes</h1>
+    <div th:each="datatype : ${datatypes}">
+        <div th:text="${datatype.namespace} + ' - ' + ${datatype.name}"></div>
+    </div>
+
+    <h1>PromptSections</h1>
+    <div th:each="promptsection : ${promptsections}">
+        <div th:text="|${promptsection.namespace} - ${promptsection.name} - ${promptsection.template}|"></div>
+    </div>
+
+    <h1>Multiples</h1>
+    <div th:each="multiple : ${multiples}">
+        <div th:text="|${multiple.namespace} - ${multiple.min}, ${multiple.max} - '${multiple.separator}', '${multiple.separatorLast}', '${multiple.separatorTwoElements}'|"></div>
+    </div>
+</div>
+</body>
+</html>

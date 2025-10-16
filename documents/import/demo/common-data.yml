@@ -1,0 +1,109 @@
+typevalues:
+  - type: 'com.signature.common::aspect-ratio'
+    values:
+      - value: '1:1'
+        weight: 1
+        type: square
+      - value: '3:4'
+        weight: 5
+        type: portrait
+      - value: '2:3'
+        weight: 5
+        type: portrait
+      - value: '9:16'
+        weight: 2
+        type: portrait
+      - value: '1:2'
+        weight: 2
+        type: portrait
+      - value: '4:3'
+        weight: 4
+        type: landscape
+      - value: '2:3'
+        weight: 4
+        type: landscape
+      - value: '16:9'
+        weight: 5
+        type: landscape
+      - value: '2:1'
+        weight: 2
+        type: landscape
+  - type: 'com.signature.common::random-number-first'
+    values:
+      - value: 1
+      - value: 2
+      - value: 3
+      - value: 4
+      - value: 5
+      - value: 6
+      - value: 7
+      - value: 8
+      - value: 9
+  - type: 'com.signature.common::random-number-subsequent'
+    values:
+      - value: 0
+      - value: 1
+      - value: 2
+      - value: 3
+      - value: 4
+      - value: 5
+      - value: 6
+      - value: 7
+      - value: 8
+      - value: 9
+  - type: 'com.signature.common::professional'
+    values:
+      - value: 'illustrator'
+        a-or-an: 'an'
+      - value: 'artist'
+        a-or-an: 'an'
+      - value: 'police officer'
+        a-or-an: 'a'
+      - value: 'teacher'
+        a-or-an: 'a'
+      - value: 'witch'
+        a-or-an: 'a'
+  - type: 'com.signature.common::animal'
+    values:
+      - value: 'bird'
+        a-or-an: 'a'
+      - value: 'lion'
+        a-or-an: 'a'
+      - value: 'elephant'
+        a-or-an: 'an'
+      - value: 'fox'
+        a-or-an: 'a'
+      - value: 'rabbit'
+        a-or-an: 'a'
+  - type: 'com.signature.common::adjective'
+    values:
+      - value: 'busy'
+        a-or-an: 'a'
+      - value: 'glamorous'
+        a-or-an: 'a'
+      - value: 'beguiling'
+        a-or-an: 'a'
+      - value: 'pretentious'
+        a-or-an: 'a'
+      - value: 'suspicious'
+        a-or-an: 'a'
+  - type: 'com.signature.common::adverb'
+    values:
+      - value: 'quickly'
+        a-or-an: 'a'
+      - value: 'serenely'
+        a-or-an: 'a'
+      - value: 'funnily'
+        a-or-an: 'a'
+      - value: 'pompously'
+        a-or-an: 'a'
+      - value: 'intriguingly'
+        a-or-an: 'an'
+  - type: 'com.signature.common::verb'
+  - type: 'com.signature.common::vehicle'
+  - type: 'com.signature.common::furniture'
+  - type: 'com.signature.common::clothing-outfit'
+  - type: 'com.signature.common::clothing-shoes'
+  - type: 'com.signature.common::clothing-pants'
+  - type: 'com.signature.common::clothing-shirts'
+  - type: 'com.signature.common::clothing-accessories'

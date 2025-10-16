@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head><title>Error 404 - Not Found</title></head>
+<body>
+<h1>We looked everywhere!</h1>
+<p>Y We No Found Anything?</p>
+<p th:text="|${error} - ${message}|"></p>
+<p><strong>Path:</strong> <span th:text="${path}"></span></p>
+<p><strong>Time:</strong> <span th:text="${timestamp}"></span></p>
+
+<div th:if="${errors}">
+    <h3>Validation errors</h3>
+    <ul>
+        <li th:each="e : ${errors}"
+            th:text="${e.field} + ': ' + ${e.defaultMessage}"></li>
+    </ul>
+</div>
+
+<pre th:if="${trace}" th:text="${trace}"></pre>
+</body>
+</html>

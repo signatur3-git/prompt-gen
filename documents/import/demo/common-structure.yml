@@ -1,0 +1,124 @@
+namespaces:
+  - name: 'com.signatur3.common'
+    separatorsets:
+      - name: commas-prose
+        separator: ', '
+        separator-last: ', and '
+        separator-two-elements: ' and '
+      - name: commas-compact
+        separator: ','
+      - name: space
+        separator: ' '
+      - name: kebab
+        separator: '-'
+      - name: snake
+        separator: '_'
+    datatypes:
+      - name: aspect-ratio
+        params:
+          - key: type
+            values:
+              - landscape
+              - portrait
+              - square
+      - name: random-number-first
+      - name: random-number-subsequent
+      - name: professional
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: animal
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: adjective
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: adverb
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: verb
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: vehicle
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: furniture
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: clothing-outfit
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: clothing-shoes
+      - name: clothing-pants
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: clothing-shirts
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+      - name: clothing-accessories
+        params:
+          - key: a-or-an
+            values:
+              - a
+              - an
+    typechoices:
+      - name: 'subject'
+        values:
+          - type: professional
+            weight: compute
+          - type: animal
+            weight: compute
+          - type: vehicle
+            weight: compute
+          - type: furniture
+            weight: compute
+          - type: clothing-outfit
+            weight: compute
+    promptsections:
+      - name: adjective-adjective-subject
+        template: '{}-{}'
+        datatypereferences:
+          - type: adjective
+            min: 2
+            separatorset: kebab
+      - name: adverb-verb-subject
+        template: '{}-{}-{}'
+        datatypereferences:
+          - type: adjective
+          - type: adverb
+          - typechoice: subject
+      - name: eight-random-words
+        template: '{}'
+        datatypereferences:
+          - typechoice: 'subject'
+            min: 8
+            separatorset: commas-compact

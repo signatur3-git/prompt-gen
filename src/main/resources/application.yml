@@ -1,0 +1,22 @@
+spring:
+  thymeleaf:
+    cache: false
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  sql:
+    init:
+      mode: never
+
+# Show SQL while developing (optional)
+logging:
+  level:
+    org.hibernate.SQL: info
+
+server:
+  error:
+    whitelabel:
+      enabled: false
+    include-message: never
+    include-stacktrace: never
